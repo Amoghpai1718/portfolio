@@ -94,18 +94,18 @@
             transform: rotate(180deg);
         }
 
-        /*
-         * FIX: Explicitly set the text and placeholder color for form inputs.
-         * The original setup was causing a contrast issue in dark mode.
-         * We'll ensure the input text and placeholder have a light color against a dark background, and vice-versa.
+        /* * FIX: Set input text and placeholder color to be the same across both themes.
+         * Using a direct hex value for the color to override theme-specific variables.
+         * The color #1f2937 is a very dark gray, almost black, which provides
+         * good contrast in light mode but will have very low contrast in dark mode.
          */
         #contact-form input,
         #contact-form textarea {
-            color: var(--text-primary);
+            color: #1f2937 !important; /* A very dark gray, similar to black */
         }
         #contact-form input::placeholder,
         #contact-form textarea::placeholder {
-            color: var(--text-secondary);
+            color: var(--text-secondary) !important;
         }
     </style>
 </head>
@@ -345,6 +345,7 @@
     </script>
 </body>
 </html>
+
 
 
 
