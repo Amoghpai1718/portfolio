@@ -93,28 +93,6 @@
         body.light-mode #theme-toggle i {
             transform: rotate(180deg);
         }
-
-        /* --- Fix for input text visibility in all modes --- */
-        input, textarea {
-            background-color: var(--bg-card);
-            color: var(--text-primary);
-            border: 1px solid var(--text-secondary);
-        }
-        input::placeholder, textarea::placeholder {
-            color: var(--text-secondary);
-            opacity: 0.7; /* Make placeholder text slightly transparent */
-        }
-        /* Autofill fix */
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover, 
-        input:-webkit-autofill:focus, 
-        textarea:-webkit-autofill,
-        textarea:-webkit-autofill:hover, 
-        textarea:-webkit-autofill:focus {
-            -webkit-text-fill-color: var(--text-primary);
-            -webkit-box-shadow: 0 0 0px 1000px var(--bg-card) inset;
-            transition: background-color 5000s ease-in-out 0s;
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -154,13 +132,12 @@
     <section id="hero" class="hero-gradient py-24 md:py-32 lg:py-48 text-center">
         <div class="container mx-auto px-6 animate-fade-in-up">
             <!-- Updated image source for profile picture -->
-            <img src="https://cdn.jsdelivr.net/gh/Amoghpai1718/portfolio@main/picofme.png" alt="Amogh Pai's Profile Photo" onerror="this.onerror=null; this.src='https://placehold.co/256x256/1f2838/8b949e?text=Profile+Pic+Not+Found';" class="rounded-full mx-auto mb-6 border-4 border-gray-600 shadow-xl w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover transform hover:scale-105 transition-transform duration-500">
+            <img src="https://raw.githubusercontent.com/Amoghpai1718/portfolio/main/picofme.png" alt="Amogh Pai's Profile Photo" class="rounded-full mx-auto mb-6 border-4 border-gray-600 shadow-xl w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover transform hover:scale-105 transition-transform duration-500">
             <h2 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">Hello, I'm <span class="text-accent-blue">Amogh Pai</span>.</h2>
             <p class="text-xl md:text-2xl lg:text-3xl text-text-secondary mb-10 tracking-wide">Aspiring Data Scientist | Tech Enthusiast</p>
             <p class="text-xl md:text-2xl lg:text-3xl text-text-secondary mb-10 tracking-wide">Exploring the intersection of data, technology, and real-world problem solving.</p>
             <a href="#projects" class="inline-block bg-blue-600 text-white font-semibold py-4 px-12 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">Explore My Projects &rarr;</a>
         </div>
-    </div>
     </section>
 
     <!-- About Section -->
@@ -222,6 +199,54 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-10 text-text-primary">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Card 1: Cricket Match Prediction -->
+                <div class="project-card rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer">
+                    <!-- Updated image source for cricket project -->
+                    <img src="https://raw.githubusercontent.com/Amoghpai1718/portfolio/main/cricket.jpg" alt="Cricket Match Prediction Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-text-primary">Advanced Cricket Match Prediction</h3>
+                        <p id="project-1-description" class="text-text-secondary text-sm mb-4">A machine learning-based system that predicts cricket match outcomes using historical player and match-level datasets. The project integrates batting, bowling, partnership, and venue data to create predictive models.</p>
+                        <button onclick="generateDescription('Advanced Cricket Match Prediction using Machine Learning', 'Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn', 'project-1-description')" class="inline-flex items-center text-accent-blue hover:text-blue-300 font-semibold transition-colors duration-300 mt-4">
+                            Generate Description
+                        </button>
+                        <div class="flex flex-wrap gap-2 text-xs font-medium mt-4">
+                            <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Python</span>
+                            <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Pandas</span>
+                            <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Scikit-learn</span>
+                            <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2: AI-Based Heart Diagnosis -->
+                <div class="project-card rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer">
+                    <!-- Updated image source for heart project -->
+                    <img src="https://raw.githubusercontent.com/Amoghpai1718/portfolio/main/heart.jpg" alt="AI-Based Heart Diagnosis Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-text-primary">AI-Based Heart Diagnosis (Prototype)</h3>
+                        <p id="project-2-description" class="text-text-secondary text-sm mb-4">An AI-powered system designed to assist in early heart disease diagnosis by analyzing patient health parameters using ML classification algorithms. Helps in decision-making for risk prediction.</p>
+                        <button onclick="generateDescription('AI-Based Heart Diagnosis (Prototype)', 'Python, Scikit-learn, Pandas, NumPy', 'project-2-description')" class="inline-flex items-center text-accent-blue hover:text-blue-300 font-semibold transition-colors duration-300 mt-4">
+                            Generate Description
+                        </button>
+                        <div class="flex flex-wrap gap-2 text-xs font-medium mt-4">
+                            <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Python</span>
+                            <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Scikit-learn</span>
+                            <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Pandas</span>
+                            <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded-full">NumPy</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-body">
         <div class="container mx-auto px-6">
@@ -230,7 +255,7 @@
                 <p class="text-center text-lg text-text-secondary mb-8">
                     I'm currently looking for new opportunities and collaborations. Feel free to reach out to me!
                 </p>
-                <!-- This is the updated form to use Formspree. The ID has been replaced with your unique ID. -->
+                <!-- Formspree form integration -->
                 <form id="contact-form" action="https://formspree.io/f/xgvzjkwq" method="POST" class="space-y-6">
                     <div>
                         <label for="name" class="block text-sm font-medium text-text-secondary">Name</label>
@@ -279,9 +304,14 @@
         const contactForm = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
 
-        // This script is no longer needed since Formspree handles the submission
-        // We can just keep the form as it is. When the user submits, they will be
-        // redirected to a success page by Formspree.
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                // Formspree handles the submission, but we can still show a message
+                // after the form has been sent (as long as it's not a full page refresh)
+                formMessage.textContent = 'Thank you for your message! Redirecting...';
+                formMessage.classList.add('text-green-500');
+            });
+        }
 
         // --- Dark/Light Mode Toggle ---
         const themeToggleBtn = document.getElementById('theme-toggle');
@@ -298,16 +328,8 @@
         if (savedTheme === 'light') {
             document.body.classList.add('light-mode');
         }
-
-        // Function to generate a new project description using a hypothetical API call
-        // This was a missing function that could have caused an error
-        function generateDescription(title, technologies, targetId) {
-            const descriptionElement = document.getElementById(targetId);
-            if (descriptionElement) {
-                descriptionElement.textContent = `This project, "${title}", was built using a variety of technologies including ${technologies}.`;
-            }
-        }
     </script>
 </body>
 </html>
+
 
