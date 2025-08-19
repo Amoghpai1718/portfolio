@@ -93,6 +93,20 @@
         body.light-mode #theme-toggle i {
             transform: rotate(180deg);
         }
+
+        /*
+         * FIX: Explicitly set the text and placeholder color for form inputs.
+         * The original setup was causing a contrast issue in dark mode.
+         * We'll ensure the input text and placeholder have a light color against a dark background, and vice-versa.
+         */
+        #contact-form input,
+        #contact-form textarea {
+            color: var(--text-primary);
+        }
+        #contact-form input::placeholder,
+        #contact-form textarea::placeholder {
+            color: var(--text-secondary);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -331,5 +345,6 @@
     </script>
 </body>
 </html>
+
 
 
