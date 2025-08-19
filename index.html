@@ -94,7 +94,17 @@
             transform: rotate(180deg);
         }
 
-        /* --- Input field autofill fix for consistent theme styling --- */
+        /* --- Fix for input text visibility in all modes --- */
+        input, textarea {
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--text-secondary);
+        }
+        input::placeholder, textarea::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.7; /* Make placeholder text slightly transparent */
+        }
+        /* Autofill fix */
         input:-webkit-autofill,
         input:-webkit-autofill:hover, 
         input:-webkit-autofill:focus, 
